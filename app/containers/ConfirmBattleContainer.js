@@ -9,19 +9,13 @@ var ConfirmBattleContainer = React.createClass({
   },
 
   getInitialState: function() {
-    console.log('getInitialState')
     return {
       isLoading: true,
       playersInfo: []
     };
   },
 
-  componentWillMount: function() {
-    console.log('componentWillMount')
-  },
-
   componentDidMount: function() {
-    console.log('componentDidMount')
     var query = this.props.location.query;
     gitHubHelpers.getPlayersInfo([query.playerOne, query.playerTwo])
       .then(function(players) {
@@ -30,14 +24,6 @@ var ConfirmBattleContainer = React.createClass({
           playersInfo: [players[0], players[1]]
         })
       }.bind(this))
-  },
-
-  componentWillReceiveProps: function(nextProps) {
-    console.log('componentWillReceiveProps')
-  },
-
-  componentWillUnmount: function() {
-    console.log('componentWillUnmount')
   },
 
   handleInitiateBattle: function() {

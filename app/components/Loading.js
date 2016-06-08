@@ -1,7 +1,6 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+import React, { PropTypes } from 'react';
 
-var styles = {
+const styles = {
   container: {
     position: 'fixed',
     left: 0,
@@ -18,7 +17,7 @@ var styles = {
   }
 };
 
-var Loading = React.createClass({
+const Loading = React.createClass({
 
   propTypes: {
     text: PropTypes.string,
@@ -40,7 +39,7 @@ var Loading = React.createClass({
   },
 
   componentDidMount: function() {
-    var stopper = this.originalText + '...';
+    const stopper = this.originalText + '...';
     this.interval = setInterval(function() {
       if (this.state.text === stopper) {
         this.setState({
@@ -68,4 +67,4 @@ var Loading = React.createClass({
 
 });
 
-module.exports = Loading;
+export default Loading;

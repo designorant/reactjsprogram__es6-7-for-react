@@ -1,11 +1,9 @@
-var React = require('react');
-var ReactRouter = require('react-router');
-var Link = ReactRouter.Link;
-var MainContainer = require('./MainContainer.js');
+import React from 'react';
+import ReactRouter, { Link } from 'react-router';
+import MainContainer from './MainContainer.js';
 
-var Home = React.createClass({
+function Home() {
 
-  render: function() {
     return (
       <MainContainer>
         <h1>GitHub Battle</h1>
@@ -14,9 +12,8 @@ var Home = React.createClass({
           <button type="button" className="btn btn-lg btn-success">Get Started</button>
         </Link>
       </MainContainer>
-    );
-  }
+    )
 
-});
+};
 
-module.exports = Home;
+export default Home;
